@@ -41,6 +41,7 @@ const ShowList = () => {
                   {genres &&
                     genres.map((genre) => <div className="genre">{genre}</div>)}
                 </div>
+                <div>hey</div>
               </div>
             );
           })}
