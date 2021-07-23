@@ -16,7 +16,7 @@
   display: grid;
   margin: 2rem;
   grid-template-columns: repeat(4, 17vw);
-  grid-auto-rows: 23rem;
+  grid-auto-rows: 24rem;
   gap: 2rem;
   justify-content: center;
 }
@@ -28,6 +28,12 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 12rem 4rem 8rem;
 }
 .show-image {
   height: 50%;
@@ -42,11 +48,23 @@
 }
 .genre {
   border-radius: 15px;
-  border: solid rgb(143, 73, 131);
+  border: 2px solid rgb(143, 73, 131);
   color: rgb(143, 73, 131);
   font-size: small;
   width: 49%;
   margin: 0.07rem;
+}
+.genre:hover {
+  background: #89778b;
+  color: wheat;
+}
+.rating {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  color: aliceblue;
+  margin: 0.3rem;
 }
 
 @media only screen and (max-width: 700px) {
