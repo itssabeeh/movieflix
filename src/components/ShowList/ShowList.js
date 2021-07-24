@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useFetch } from '../../api/useFetch';
 import './ShowList.css';
-const url = 'https://api.tvmaze.com/shows';
-const ShowList = () => {
+// const url = 'https://api.tvmaze.com/shows';
+const ShowList = ({ showlists }) => {
+  const [showlist, setshowlist] = useState();
+  const [page, setPage] = useState(1);
   // const [isLoading, setIsLoading] = useState(true);
   // const [shows, setShows] = useState([]);
   // const [isError, setIsError] = useState(false);
@@ -21,9 +23,9 @@ const ShowList = () => {
   // useEffect(() => {
   //   fetchShows();
   // }, []);
-  const { isLoading, data: shows } = useFetch(url);
-  const showlists = shows.data;
-  console.log(showlists);
+  // const { isLoading, data: shows } = useFetch(url);
+  // const showlists = shows.data;
+
   return (
     <div className="body-container">
       <h1 style={{ textAlign: 'center' }}>STREAMING NOW</h1>
@@ -41,8 +43,10 @@ const ShowList = () => {
                   </h5>
                   <div className="show-genres">
                     {genres &&
-                      genres.map((genre) => (
-                        <div className="genre">{genre}</div>
+                      genres.map((genre, index) => (
+                        <div key={index} className="genre">
+                          {genre}
+                        </div>
                       ))}
                   </div>
                 </div>

@@ -1,0 +1,25 @@
+.page-container {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+}
+.pages {
+  border: 3px solid rgba(112, 18, 158, 0.25);
+  margin: 0.1rem;
+  min-width: 2rem;
+}
+.page-btn {
+  color: rgba(113, 17, 161, 0.671);
+  margin-top: 0.3rem;
+}
+.pages:hover {
+  cursor: pointer;
+  background: #89778b;
+}
+.page-btn:hover {
+  cursor: pointer;
+}
