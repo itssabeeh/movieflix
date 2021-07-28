@@ -1,12 +1,26 @@
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
 import Page from './components/Pages/Page';
-import ShowList from './components/ShowList/ShowList';
+import SearchPage from './components/Search/SearchPage';
+import Show from './components/Show/Show';
 
 function App() {
   return (
-    <div className="container">
-      <Page />
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Page />
+        </Route>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
+        <Route path="/show/:id">
+          <Show />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

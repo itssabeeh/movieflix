@@ -1,0 +1,12 @@
+.details-container {
+  height: 60vh;
+  color: black;
+  border-radius: 5px;
+  width: 80vw;
+  margin: 2rem auto;
+  background: rgba(243, 234, 255, 0.993);
+}
+.text-section {
+  display: flex;
+  flex-direction: column;
+}

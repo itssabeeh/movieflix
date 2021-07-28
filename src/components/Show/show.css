@@ -1,0 +1,15 @@
+.main-container {
+  color: white;
+  margin: 5rem 2rem;
+}
+.btn {
+  color: white;
+  background: rgb(20, 20, 20);
+  border: none;
+  font-size: large;
+  margin: 0.1rem;
+  padding: 0.7rem;
+}
+.btn:hover {
+  cursor: pointer;
+}
