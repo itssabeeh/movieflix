@@ -5,7 +5,6 @@ import './Search.css';
 
 const SearchPage = () => {
   const { searchResult } = useGlobalContext();
-  console.log(searchResult);
   return (
     <div className="search-container">
       {searchResult.map((item) => {

@@ -26,7 +26,6 @@ const Page = () => {
   useEffect(() => {
     setPagelist(showlist.slice(pageNo * 12, pageNo * 12 + 12));
   }, [pageNo]);
-  console.log(pageList);
   return (
     <div>
       <ShowList showlists={pageList} />

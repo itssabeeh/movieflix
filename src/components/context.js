@@ -11,7 +11,6 @@ const AppProvider = ({ children }) => {
   const fetchData = async () => {
     try {
       const shows = await axios.get(`${url}${searchTerm}`);
-      console.log('shows');
       setSearchResult(shows.data);
       setIsLoading(false);
     } catch {
@@ -21,7 +20,6 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, [searchTerm]);
-  console.log(searchResult);
   return (
     <AppContext.Provider value={{ searchTerm, searchResult, setSearchTerm }}>
       {children}

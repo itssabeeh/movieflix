@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { AiOutlineStar } from 'react-icons/ai';
 import './SingleShow.css';
 const SingleShow = ({ id, name, genres, rating, weight, image, premiered }) => {
-  console.log('hey');
   return (
     <div key={id} className="cards">
       {image && (

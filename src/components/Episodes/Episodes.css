@@ -1,0 +1,17 @@
+.episodes {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.episode-heading {
+  background-color: rgb(20, 20, 20);
+  display: grid;
+  grid-template-columns: 45vw 12vw 12vw 20vw;
+}
+.ep-list {
+  background-color: rgb(20, 20, 20);
+  display: grid;
+  margin-top: 0.5rem;
+  grid-template-columns: 45vw 12vw 12vw 20vw;
+}

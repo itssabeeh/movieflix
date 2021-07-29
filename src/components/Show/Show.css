@@ -13,3 +13,6 @@
 .btn:hover {
   cursor: pointer;
 }
+.details-btn {
+  background-color: #551a8b;
+}
