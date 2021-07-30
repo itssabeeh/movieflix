@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export const useFetch = (url) => {
@@ -20,5 +20,5 @@ export const useFetch = (url) => {
     fetchData();
   }, [url]);
 
-  return { isLoading, data };
+  return { isLoading, data, isError };
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFetch } from '../../api/useFetch';
 import './Cast.css';
 const url = 'https://api.tvmaze.com/shows/';

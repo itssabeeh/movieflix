@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import './Navbar.css';
@@ -9,7 +9,7 @@ const Navbar = () => {
     searchTerm(e.target.value);
   };
   return (
-    <navbar className="navcontainer">
+    <nav className="navcontainer">
       <Link style={{ textDecoration: 'none' }} to="/">
         <h1>MovieFlix</h1>
       </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
           </button>
         </Link>
       </form>
-    </navbar>
+    </nav>
   );
 };
 

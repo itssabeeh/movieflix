@@ -10,7 +10,8 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  color: wheat;
+  color: white;
+  margin-bottom: 0rem;
 }
 .card-container {
   display: grid;
@@ -19,6 +20,8 @@
   grid-auto-rows: 24rem;
   gap: 2rem;
   justify-content: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .cards {
   background: rgba(112, 18, 158, 0.25);

@@ -10,6 +10,7 @@ const AppProvider = ({ children }) => {
   const [isError, setIsError] = useState(false);
   const fetchData = async () => {
     try {
+      setIsLoading(true);
       const shows = await axios.get(`${url}${searchTerm}`);
       setSearchResult(shows.data);
       setIsLoading(false);
@@ -21,7 +22,9 @@ const AppProvider = ({ children }) => {
     fetchData();
   }, [searchTerm]);
   return (
-    <AppContext.Provider value={{ searchTerm, searchResult, setSearchTerm }}>
+    <AppContext.Provider
+      value={{ searchTerm, searchResult, setSearchTerm, isLoading, isError }}
+    >
       {children}
     </AppContext.Provider>
   );

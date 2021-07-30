@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ShowList from '../ShowList/ShowList';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
+import Loading from '../Loading/Loading';
 import { useFetch } from '../../api/useFetch';
 import './Page.css';
 const url = 'https://api.tvmaze.com/shows';
 const Page = () => {
-  const { isLoading, data: shows } = useFetch(url);
+  const { isLoading, data: shows, isError } = useFetch(url);
   const [totalPages, setTotalPages] = useState(0);
   const [pageArr, setPageArr] = useState([]);
   const [pageNo, setPageNo] = useState(0);
@@ -27,38 +28,48 @@ const Page = () => {
     setPagelist(showlist.slice(pageNo * 12, pageNo * 12 + 12));
   }, [pageNo]);
   return (
-    <div>
-      <ShowList showlists={pageList} />
-      <div className="page-container">
-        <span
-          className="page-btn"
-          onClick={() => {
-            if (pageNo > 0) setPageNo(pageNo - 1);
-          }}
-        >
-          <BiLeftArrow />
-        </span>
-        {pageArr.slice(pageNo, pageNo + 5).map((page, index) => {
-          return (
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <ShowList
+            showlists={pageList}
+            isLoading={isLoading}
+            isError={isError}
+          />
+          <div className="page-container">
             <span
-              key={index}
-              className="pages"
-              onClick={() => setPageNo(page - 1)}
+              className="page-btn"
+              onClick={() => {
+                if (pageNo > 0) setPageNo(pageNo - 1);
+              }}
             >
-              {page}
+              <BiLeftArrow />
             </span>
-          );
-        })}
-        <span
-          className="page-btn"
-          onClick={() => {
-            if (pageNo < totalPages) setPageNo(pageNo + 1);
-          }}
-        >
-          <BiRightArrow />
-        </span>
-      </div>
-    </div>
+            {pageArr.slice(pageNo, pageNo + 5).map((page, index) => {
+              return (
+                <span
+                  key={index}
+                  className="pages"
+                  onClick={() => setPageNo(page - 1)}
+                >
+                  {page}
+                </span>
+              );
+            })}
+            <span
+              className="page-btn"
+              onClick={() => {
+                if (pageNo < totalPages) setPageNo(pageNo + 1);
+              }}
+            >
+              <BiRightArrow />
+            </span>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
