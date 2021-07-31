@@ -1,6 +1,12 @@
 .main-container {
   color: white;
+  display: flex;
+  flex-direction: column;
   margin: 5rem 2rem;
+  align-items: center;
+}
+.btn-container {
+  align-self: flex-start;
 }
 .btn {
   color: white;
@@ -15,4 +21,13 @@
 }
 .details-btn {
   background-color: #551a8b;
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container {
+    margin: 6rem 0.2rem;
+  }
+  .btn-container {
+    align-self: center;
+  }
 }
