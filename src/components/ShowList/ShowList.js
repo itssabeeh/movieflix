@@ -9,7 +9,7 @@ const ShowList = ({ showlists, isLoading, isError }) => {
       {isLoading ? (
         <Loading />
       ) : isError ? (
-        <Error />
+        <Error msg={'Oops...something went wrong'} />
       ) : (
         <div className="body-container">
           <h1 style={{ textAlign: 'center', paddingTop: '1.5rem' }}>

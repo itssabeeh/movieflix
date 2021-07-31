@@ -23,11 +23,7 @@ const Details = ({ name, runtime, genres, image, premiered, summary }) => {
       </section>
       <section className="image-section">
         {image && (
-          <img
-            className="details-image"
-            src={image.original}
-            alt="image not available"
-          ></img>
+          <img className="details-image" src={image.original} alt={name}></img>
         )}
       </section>
     </div>

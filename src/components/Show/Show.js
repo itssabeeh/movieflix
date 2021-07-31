@@ -6,11 +6,13 @@ import './Show.css';
 import Episodes from '../Episodes/Episodes';
 import Cast from '../Cast/Cast';
 import Crew from '../Cast/Crew';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 const urlid = 'https://api.tvmaze.com/shows/';
 
 const Show = () => {
   const { id } = useParams();
-  const { data: showdata } = useFetch(`${urlid}${id}`);
+  const { isLoading, data: showdata, isError } = useFetch(`${urlid}${id}`);
   const [isShowDetails, setIsShowDetails] = useState(true);
   const [isShowEpisodes, setIsShowEpisodes] = useState(false);
   const [isShowCast, setIsShowCast] = useState(false);
@@ -88,7 +90,14 @@ const Show = () => {
           Crew
         </button>
       </div>
-      <section>{isShowDetails && <Details {...showdata.data} />}</section>
+      {isLoading ? (
+        <Loading />
+      ) : isError ? (
+        <Error msg={'Failed to load data'} />
+      ) : (
+        <section>{isShowDetails && <Details {...showdata.data} />}</section>
+      )}
+
       <section>{isShowEpisodes && <Episodes id={id} />}</section>
       <section>{isShowCast && <Cast id={id} />}</section>
       <section>{isShowCrew && <Crew id={id} />}</section>
